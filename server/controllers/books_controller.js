@@ -36,14 +36,14 @@ module.exports = {
     },
     delete: (request,response) => {
 //find book by it's ID        
-        let index = null
+        let index = null;
         books.forEach((book, i) => {
             if (book.id === Number(request.params.id)) index = i;
         });   
 //then do this:              
         books.splice(index, 1);
 // show this in response          
-        res.status(200).send(books);
+        response.status(200).send(books);
     }
 }
 
